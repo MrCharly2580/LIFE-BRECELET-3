@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semestre 2 - Desarrollo y Prototipo | Life Bracelet</title>
+    <link rel="stylesheet" href="css/style.css" /> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Usamos las mismas clases que en semestre1 para mantener escala y comportamiento -->
+    <header class="header header-semestre-content blur-header">
+        <div class="menu container">
+            <a href="index.html" class="logo-img">
+                <img src="img/logo.png" alt="Life Bracelet Logo" class="logo-icon"/>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle">
+                <img src="img/menu.png" class="menu-icon" alt="Menú" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="semestres.html" class="active">Semestres</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container">
+            <h1 class="slide-up">Segundo Semestre</h1>
+            <p class="fade-in delay-200">Desarrollo, Documentación y Prototipos Iniciales.</p>
+            
+            <nav class="subnav corte-card-group fade-in delay-400">
+                <a href="#corte1" class="corte-nav-card slide-left">
+                    <span class="material-icons">assignment</span> Corte 1
+                </a>
+                <a href="#corte2" class="corte-nav-card slide-up delay-200">
+                    <span class="material-icons">videocam</span> Corte 2
+                </a>
+                <a href="#corte3" class="corte-nav-card slide-right delay-400">
+                    <span class="material-icons">devices_other</span> Corte 3
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <section id="corte1" class="corte-section">
+                <h2 class="section-title slide-up">📝 Corte 1: Estado del Arte</h2>
+                <div class="corte-content slide-left">
+                    <p class="corte-intro">El <strong>Estado del Arte</strong> es la base teórica de nuestro proyecto. En esta fase, realizamos una investigación exhaustiva de soluciones existentes, tecnologías de monitoreo y la viabilidad de implementar algoritmos de detección de caídas de bajo consumo.</p>
+                    
+                    <a href="img/EstadodelArte.pdf" target="_blank" class="btn fade-in delay-400">
+                        <span class="material-icons">picture_as_pdf</span> Descargar Documento Completo (PDF)
+                    </a>
+                </div>
+            </section>
+            
+            <hr class="separator">
+
+            <section id="corte2" class="corte-section">
+                <h2 class="section-title slide-up">📢 Corte 2: Pitch y Visión</h2>
+                <div class="corte-content slide-right">
+                    <p class="corte-intro">El foco fue la <strong>comunicación y la visión comercial</strong>. Desarrollamos un <em>pitch</em> persuasivo en formato de video para presentar la propuesta de valor social y tecnológica de Life Bracelet a potenciales inversionistas y a la comunidad. <strong>¡Haz clic para ver nuestro video!</strong></p>
+                    
+                    <div class="video-container-dynamic fade-in delay-200" onclick="playVideo(this)">
+                        <div class="video-placeholder">
+                            <span class="material-icons">play_circle_filled</span>
+                            <h4>Ver Video Promocional del Proyecto</h4>
+                            <p>(Haz clic para cargar y reproducir)</p>
+                        </div>
+                        <iframe 
+                            width="100%" 
+                            height="315" 
+                            data-src="https://www.youtube.com/embed/uCPw5aAz-z8" 
+                            title="Video Promocional Semestre 2 (Shorts)" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                            style="display:none;"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="separator">
+
+            <section id="corte3" class="corte-section">
+                <h2 class="section-title slide-up">💡 Corte 3: Prototipo de Monitoreo Térmico</h2>
+                <div class="corte-content slide-left">
+                    <p class="corte-intro">
+                        Este prototipo representa nuestra primera implementación de hardware. Diseñado para detectar un aumento de <strong>temperatura</strong> utilizando un sensor <strong>LM35</strong> y activar una señal visual (<strong>LED</strong>) cuando la temperatura supera el umbral de <strong>38&deg;C</strong> (Fiebre).
+                    </p>
+
+                    <div class="info-box gradient-bg fade-in delay-200">
+                        <span class="material-icons">engineering</span>
+                        <div>
+                            <strong>Detalles Técnicos:</strong> El sistema utiliza un comparador de voltaje (<strong>LM393</strong>) para establecer el umbral de <strong>38&deg;C</strong> y un microcontrolador (Arduino/ESP32) para la lógica de alerta. La transición a la alerta es instantánea.
+                        </div>
+                    </div>
+
+                    <!-- 🧠 Prototipo visual con estilo del sensor -->
+<!-- 🧠 Prototipo visual con estilo del sensor (en línea) -->
+<div class="sensor-gallery fade-in delay-400">
+  <figure class="sensor-card">
+    <img src="img/esquemaprimerprototipo.jpg" alt="Esquema de conexiones del prototipo térmico" loading="lazy">
+    <figcaption>Diagrama de Conexiones del Prototipo Térmico (LM35 + LED)</figcaption>
+  </figure>
+
+  <figure class="sensor-card delay-200">
+    <img src="img/protoboard.jpg" alt="Montaje físico del prototipo térmico" loading="lazy">
+    <figcaption>Montaje Físico del Prototipo en Protoboard</figcaption>
+  </figure>
+</div>
+
+
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer-cta fade-in">
+        <div class="container">
+            <p>¿Interesado en la arquitectura completa de Life Bracelet?</p>
+            <a href="index.html#tecnologia" class="btn btn-footer">
+                <span class="material-icons">arrow_back</span> Volver a la Tecnología
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Renderización de KaTeX (si está presente)
+            if (window.renderMathInElement) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false},
+                    ],
+                    ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"]
+                });
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in, .delay-200, .delay-400, .delay-600').forEach(el => {
+                if (!el.classList.contains('visible')) observer.observe(el);
+            });
+
+            // Efecto Blur-on-Scroll (como en semestre1) para mantener coherencia visual
+            const header = document.querySelector('.blur-header');
+            const headerContent = document.querySelector('.header-semestre-content .header-content');
+            
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const maxBlur = 10; // Máximo desenfoque en píxeles
+                const blurAmount = Math.min(scrollPosition / 100, maxBlur); // Ajusta la velocidad de desenfoque
+                
+                if (header) {
+                    header.style.backgroundFilter = `blur(${blurAmount}px)`;
+                    header.style.backdropFilter = `blur(${blurAmount}px)`;
+                }
+                
+                // Efecto de desvanecimiento del contenido al hacer scroll
+                if (headerContent) {
+                    const opacity = Math.max(0, 1 - scrollPosition / 400); 
+                    headerContent.style.opacity = opacity;
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        function playVideo(container) {
+            const iframe = container.querySelector('iframe');
+            const placeholder = container.querySelector('.video-placeholder');
+            
+            iframe.src = iframe.getAttribute('data-src') + "?autoplay=1";
+            iframe.style.display = 'block';
+            if (placeholder) placeholder.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

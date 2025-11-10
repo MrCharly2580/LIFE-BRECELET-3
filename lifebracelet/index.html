@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Life Bracelet - Protección Inteligente</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+</head>
+<body>
+    
+    
+    <header class="header">
+        
+        <div class="menu container">
+            <a href="index.html" class="logo-img">
+                <img src="img/logo.png" alt="Life Bracelet Logo" class="logo-icon"/>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle">
+                <img src="img/menu.png" class="menu-icon" alt="Menú" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="semestres.html">Semestres</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container">
+            <img src="img/tipografialogo.png" alt="Life Bracelet" class="header-banner fade-in"/>
+            <p class="fade-in">Protección Inteligente para Nuestros Mayores</p>
+            <a href="#features" class="btn fade-in">Conoce las Características</a>
+        </div>
+    </header>
+    
+
+    <section id="proyecto" class="section-padding scroll-section">
+        <div class="container">
+            <h2 class="section-title slide-up">¿Qué es Life Bracelet?</h2>
+            
+            <div class="card-group">
+    <div class="card slide-left float-card">
+        <span class="card-icon">🎯</span>
+        <h3>Objetivo</h3>
+        <p>Brindar seguridad, autonomía y tranquilidad a los adultos mayores y sus familias mediante una solución tecnológica accesible, cómoda y económica.</p>
+    </div>
+    <div class="card slide-up delay-200 float-card">
+        <span class="card-icon">🧓🏼</span>
+        <h3>El Problema</h3>
+        <p>Las caídas y el aislamiento en adultos mayores son riesgos graves. Ofrecemos una solución de monitoreo de salud efectiva, asequible y no invasiva.</p>
+    </div>
+    <div class="card slide-right delay-400 float-card">
+        <span class="card-icon">🩺</span>
+        <h3>La Solución</h3>
+        <p>Un dispositivo portátil que monitorea signos vitales y detecta caídas/movimientos bruscos, enviando alertas automáticas a cuidadores.</p>
+    </div>
+</div>
+        </div>
+    </section>
+    
+    <section id="features" class="features section-padding scroll-section">
+    <div class="container">
+        <h2 class="section-title slide-up">Características Clave</h2>
+
+        <div class="feature-item slide-left">
+            <div class="feature-text">
+                <h3>Detección de Caídas en Tiempo Real</h3>
+                <p>Utilizamos acelerómetros de alta precisión y algoritmos inteligentes para diferenciar una actividad normal de una caída, asegurando una alerta inmediata. <strong>La velocidad de reacción es nuestra prioridad.</strong></p>
+            </div>
+            <div class="feature-image">
+                <!-- Puedes agregar aquí un gif o ilustración animada -->
+            </div>
+        </div>
+
+        <div class="feature-item reverse slide-right">
+            <div class="feature-text">
+                <h3>Monitoreo Biomédico</h3>
+                <p>Integramos sensores como el <strong>MAX30102</strong> (SpO₂ y frecuencia cardíaca) para un seguimiento integral de la salud. La información es vital y accesible para el seguimiento médico continuo.</p>
+            </div>
+            <div class="feature-image">
+                <!-- Puedes agregar aquí un gif o ilustración animada -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="tecnologia" class="section-padding scroll-section">
+    <div class="container">
+        <h2 class="section-title slide-up">🧠 Tecnología e Innovación</h2>
+
+        <div class="tech-grid">
+            <!-- Contribuciones -->
+            <div class="feature-item slide-left float-card">
+                <div class="feature-text">
+                    <h3>🔬 Contribuciones del Proyecto</h3>
+                    <ul>
+                        <li>Prevención de lesiones por caídas mediante detección automatizada.</li>
+                        <li>Monitoreo remoto de signos vitales, ideal para seguimiento médico.</li>
+                        <li>Reducción del aislamiento y la ansiedad en adultos mayores y sus familias.</li>
+                        <li>Avances científicos en análisis de señales biomédicas y diseño inclusivo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Estado actual -->
+            <div class="feature-item slide-right float-card">
+                <div class="feature-text">
+                    <h3>📈 Estado Actual y Futuro</h3>
+                    <ul>
+                        <li>Miniaturización de hardware (Prototipo a Brazalete).</li>
+                        <li>Integración con apps móviles y geolocalización (GPS/GPRS).</li>
+                        <li>Implementación <strong>Aprendizaje Profundo</strong> (Deep Learning) para optimizar la detección.</li>
+                        <li>Compatible con MATLAB, Python, TensorFlow y Scikit-learn.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="cta bg-rosa">
+        <div class="container text-center fade-in">
+            <h2>¿Quieres saber más sobre nuestra fase de validación?</h2>
+            <p>Descubre los detalles técnicos, la arquitectura de hardware (ESP32, MPU-6050) y los próximos pasos del proyecto.</p>
+            <a href="semestres.html" class="btn-secondary">Ver Avances por Semestre</a>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in, .delay-200, .delay-400').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    
+</body>
+
+
+</html>

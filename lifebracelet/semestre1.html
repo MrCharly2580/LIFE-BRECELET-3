@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestre 1 - Conceptualización | Life Bracelet</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    </head>
+<body>
+
+    <header class="header header-semestre-content blur-header">
+        <div class="menu container">
+            <a href="index.html" class="logo-img">
+                <img src="img/logo.png" alt="Life Bracelet Logo" class="logo-icon"/>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle">
+                <img src="img/menu.png" class="menu-icon" alt="Menú" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="semestres.html">Semestres</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container">
+            <h1 class="slide-up">Video Presentación – Semestre 1</h1>
+            <h2 class="fade-in delay-200">Conceptualización y Detección del Problema</h2>
+        </div>
+    </header>
+
+    <section class="section-padding bg-light">
+        <div class="container content-grid">
+            
+            <div class="text-block slide-left">
+                <h3 class="title-accent"><span class="material-icons">lightbulb_outline</span> Origen y Misión</h3>
+                <p>
+                    El primer semestre de **Life Bracelet** se centró en la **Conceptualización y Validación de la Necesidad**. Nuestro objetivo era determinar la viabilidad y el impacto social de un dispositivo de monitoreo discreto para adultos mayores que viven solos. Abordamos la necesidad crítica de un sistema de alerta temprana.
+                </p>
+                <p>
+                    La misión se definió claramente: crear una herramienta que brinde **seguridad, autonomía y tranquilidad** a través del seguimiento de **signos vitales** (frecuencia cardíaca, temperatura) y la fundamental **detección de caídas**.
+                </p>
+                
+                <h3 class="title-accent"><span class="material-icons">timeline</span> Próximos Pasos</h3>
+                <p>
+                    Con esta base conceptual, el Semestre 2 se enfocará en el diseño de bajo nivel, la selección final del hardware (microcontroladores y sensores) y el inicio de la programación de los algoritmos de detección de caídas.
+                </p>
+            </div>
+
+            <div class="video-section slide-right">
+                <h3 class="title-accent video-title"><span class="material-icons">play_circle_outline</span> Video Explicativo</h3>
+                <div class="video-container">
+                    <iframe 
+                        width="100%" 
+                        height="450" 
+                        src="https://www.youtube.com/embed/3JvkqC3mMDg?si=EJ2bBh1JfSTwI2Ob" 
+                        title="Video Semestre 1" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <a href="#timeline" class="btn btn-timeline slide-up delay-400">Ver Hitos del Semestre</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="timeline" class="section-padding bg-dark">
+        <div class="container">
+            <h2 class="section-title slide-up" style="color: var(--color-blanco);">Hitos Clave del Semestre 1</h2>
+
+            <div class="timeline">
+                
+                <div class="timeline-item slide-left">
+                    <div class="timeline-dot" style="background-color: var(--color-rosa);"></div>
+                    <div class="timeline-content card-timeline">
+                        <h4>Fase 1: Análisis del Mercado y Problema</h4>
+                        <p>Investigación de la incidencia de caídas y soledad en la población objetivo. Definición clara del "gap" que Life Bracelet busca llenar frente a soluciones existentes (caras o complejas).</p>
+                        <span class="timeline-date">Septiembre</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item slide-right delay-200">
+                    <div class="timeline-dot" style="background-color: var(--color-azul-claro);"></div>
+                    <div class="timeline-content card-timeline">
+                        <h4>Fase 2: Definición Funcional</h4>
+                        <p>Se establecieron los requerimientos no funcionales (diseño ergonómico, discreto) y funcionales (monitoreo de signos vitales, detección de caídas, alerta SMS).</p>
+                        <span class="timeline-date">Octubre</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item slide-left delay-400">
+                    <div class="timeline-dot" style="background-color: var(--color-lima);"></div>
+                    <div class="timeline-content card-timeline">
+                        <h4>Fase 3: Diseño Conceptual y Hardware Preliminar</h4>
+                        <p>Selección de tecnologías candidatas (ESP32 para IoT, MPU-6050 para movimiento, MAX30102 para biometría). Elaboración de la arquitectura a nivel de bloques.</p>
+                        <span class="timeline-date">Noviembre</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item slide-right delay-600">
+                    <div class="timeline-dot" style="background-color: var(--color-sunset);"></div>
+                    <div class="timeline-content card-timeline">
+                        <h4>Fase 4: Presentación y Documentación Inicial</h4>
+                        <p>Creación del primer documento formal del proyecto y el video de presentación. Establecimiento de métricas de éxito para el próximo semestre (Tasa de falsos positivos en detección de caídas).</p>
+                        <span class="timeline-date">Diciembre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            // Animaciones de desplazamiento
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in, .delay-200, .delay-400, .delay-600').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Efecto Blur-on-Scroll en el header (JS Puro)
+            const header = document.querySelector('.blur-header');
+            const headerContent = document.querySelector('.header-semestre-content .header-content');
+            
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const maxBlur = 10; // Máximo desenfoque en píxeles
+                const blurAmount = Math.min(scrollPosition / 100, maxBlur); // Ajusta la velocidad de desenfoque
+                
+                header.style.backgroundFilter = `blur(${blurAmount}px)`;
+                header.style.backdropFilter = `blur(${blurAmount}px)`;
+                
+                // Efecto de desvanecimiento del contenido al hacer scroll
+                const opacity = Math.max(0, 1 - scrollPosition / 400); 
+                headerContent.style.opacity = opacity;
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

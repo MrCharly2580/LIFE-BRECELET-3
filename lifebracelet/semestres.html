@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Life Bracelet - Trayectoria del Proyecto</title>
+    <link rel="stylesheet" href="css/style.css" /> 
+</head>
+<body>
+    <header class="header header-semestres">
+        <div class="menu container">
+            <a href="index.html" class="logo-img">
+                <img src="img/logo.png" alt="Life Bracelet Logo" class="logo-icon"/>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle">
+                <img src="img/menu.png" class="menu-icon" alt="Menú" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="semestres.html" class="active">Semestres</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container">
+            <img src="img/tipografialogo.png" alt="Life Bracelet" class="header-banner fade-in"/>
+            <h1 class="slide-up">Trayectoria del Proyecto</h1>
+            <p class="fade-in delay-200">Aquí encontrarás el proceso del proyecto Life Bracelet dividido por etapas de desarrollo y validación.</p>
+        </div>
+    </header>
+
+    <main class="section-padding bg-dark">
+        <div class="container">
+            <h2 class="section-title slide-up">🚀 Fases de Desarrollo</h2>
+            
+            <div class="semestres-options card-group" id="semestres-options">
+                <article 
+                    class="semestre-card slide-left" 
+                    role="button" tabindex="0" 
+                    aria-expanded="false" 
+                    data-target="s1"
+                >
+                    <div class="card-head">
+                        <span class="card-icon">1</span>
+                        <div class="card-title">
+                            <h3>Semestre 1</h3>
+                            <p class="card-sub">Conceptualización y Detección del Problema.</p>
+                        </div>
+                        <span class="toggle-icon" aria-hidden="true">▾</span>
+                    </div>
+                    <div class="card-details" id="s1" aria-hidden="true">
+                        <p>En el primer semestre se definieron la misión, la necesidad y el alcance del proyecto. Se validaron las hipótesis iniciales y se documentaron los principales casos de uso y requerimientos.</p>
+                        <div class="card-actions">
+                            <a href="semestre1.html" class="btn btn-small">Ver Semestre 1</a>
+                        
+                        </div>
+                    </div>
+                </article>
+                
+                <article 
+                    class="semestre-card slide-up delay-200" 
+                    role="button" tabindex="0" 
+                    aria-expanded="false" 
+                    data-target="s2"
+                >
+                    <div class="card-head">
+                        <span class="card-icon">2</span>
+                        <div class="card-title">
+                            <h3>Semestre 2</h3>
+                            <p class="card-sub">Selección de Componentes y Diseño de Prototipo Básico.</p>
+                        </div>
+                        <span class="toggle-icon" aria-hidden="true">▾</span>
+                    </div>
+                    <div class="card-details" id="s2" aria-hidden="true">
+                        <p>El segundo semestre se enfocó en la selección de sensores, microcontroladores y en la creación de los primeros prototipos funcionales. Se realizaron pruebas de integración y mediciones preliminares.</p>
+                        <div class="card-actions">
+                            <a href="semestre2.html" class="btn btn-small">Ver Semestre 2</a>
+                            <a href="img/EstadodelArte.pdf" class="btn btn-ghost" target="_blank">Descargar Estado del Arte</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article 
+                    class="semestre-card slide-right delay-400" 
+                    role="button" tabindex="0" 
+                    aria-expanded="false" 
+                    data-target="s3"
+                >
+                    <div class="card-head">
+                        <span class="card-icon">3</span>
+                        <div class="card-title">
+                            <h3>Semestre 3</h3>
+                            <p class="card-sub">Validación Funcional, Algoritmos y Optimización.</p>
+                        </div>
+                        <span class="toggle-icon" aria-hidden="true">▾</span>
+                    </div>
+                    <div class="card-details" id="s3" aria-hidden="true">
+                        <p>En este semestre se implementaron los algoritmos de detección, se validó el rendimiento del prototipo y se optimizó consumo y fiabilidad. Se recorrieron ciclos de prueba-errores y ajuste de parámetros.</p>
+                        <div class="card-actions">
+                            <a href="semestre3.html" class="btn btn-small">Ver Semestre 3</a>
+                            <a href="img/LifeBracelet3erSem.pdf" class="btn btn-ghost" target="_blank">Descargar Avance del Proyecto</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <section class="cta cta-semestres fade-in delay-600">
+                <p>¿Interesado en los detalles técnicos de cada fase?</p>
+                <a href="#semestres-options" class="btn">Explora los Documentos</a>
+            </section>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // IntersectionObserver (ya tenías este patrón)
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.08 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in').forEach(el => observer.observe(el));
+
+            // Acordeón dinámico para las tarjetas de semestres
+            const cards = Array.from(document.querySelectorAll('.semestre-card'));
+            function closeAll(except = null) {
+                cards.forEach(c => {
+                    if (c !== except) {
+                        c.classList.remove('active');
+                        c.setAttribute('aria-expanded', 'false');
+                        const details = document.getElementById(c.dataset.target);
+                        if (details) details.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            }
+
+            function toggleCard(card) {
+                const targetId = card.dataset.target;
+                const details = document.getElementById(targetId);
+                const isActive = card.classList.contains('active');
+                if (isActive) {
+                    card.classList.remove('active');
+                    card.setAttribute('aria-expanded', 'false');
+                    if (details) details.setAttribute('aria-hidden', 'true');
+                } else {
+                    closeAll(card);
+                    card.classList.add('active');
+                    card.setAttribute('aria-expanded', 'true');
+                    if (details) details.setAttribute('aria-hidden', 'false');
+                    // Scroll suave para traer la tarjeta visible en pantallas pequeñas
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            cards.forEach(card => {
+                // click
+                card.addEventListener('click', (e) => {
+                    // evitar que clicks en enlaces internos disparen el toggle general
+                    if (e.target.closest('a')) return;
+                    toggleCard(card);
+                });
+                // keyboard (Enter o Space)
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleCard(card);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

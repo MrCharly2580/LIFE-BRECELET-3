@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semestre 3 - Detección de Caídas y Alerta Web | Life Bracelet</title>
+    <link rel="stylesheet" href="css/style.css" /> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+        <header class="header header-semestre-content blur-header">
+    <div class="particles-bg">
+    <div class="particle" style="top: 80%; left: 10%; animation-duration: 8s;"></div>
+    <div class="particle" style="top: 60%; left: 50%; animation-duration: 12s;"></div>
+    <div class="particle" style="top: 90%; left: 80%; animation-duration: 10s;"></div>
+    <!-- agrega más partículas dinámicas -->
+</div>
+        <div class="menu container">
+            <a href="index.html" class="logo-img">
+                <img src="img/logo.png" alt="Life Bracelet Logo" class="logo-icon"/>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle">
+                <img src="img/menu.png" class="menu-icon" alt="Menú" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="semestres.html" class="active">Semestres</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container">
+            <h1 class="slide-up">Tercer Semestre</h1>
+            <p class="fade-in delay-200">Validación Funcional de Detección de Caídas y Alerta Wi-Fi.</p>
+            
+            <nav class="subnav corte-card-group fade-in delay-400">
+                <a href="#corte1" class="corte-nav-card slide-left">
+                    <span class="material-icons">vibration</span> Corte 1
+                </a>
+                <a href="#corte2" class="corte-nav-card slide-up delay-200">
+                    <span class="material-icons">wifi</span> Corte 2
+                </a>
+                <a href="#corte3" class="corte-nav-card slide-right delay-400">
+                    <span class="material-icons">timeline</span> Corte 3
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <section id="corte1" class="corte-section">
+    <h2 class="section-title slide-up">🚀 Corte 1: Prototipo de Detección de Impacto (Vibración)</h2>
+    <div class="corte-content slide-left">
+        <p class="corte-intro">El primer corte del tercer semestre se enfocó en el desarrollo rápido de una funcionalidad clave: simular el <strong>estado de alerta por un golpe o impacto</strong>, utilizando componentes básicos para validar la lógica de notificación inmediata.</p>
+        
+        <h3>🛠️ Implementación y Resultados</h3>
+        <ul class="list-bullet-style">
+            <li><strong>Sensor Principal (POC):</strong> Módulo <strong>SW420</strong> (interruptor de vibración) y comparador <strong>LM393</strong>.</li>
+            <li><strong>Mecanismo de Alerta:</strong> Detección de impactos que superan un umbral, activando un <strong>Buzzer</strong> con un sonido sonoro que dura aproximadamente 10 segundos.</li>
+        </ul>
+
+                <!-- 🖼️ Imagen interactiva del sensor -->
+        <div class="sensor-image-container fade-in delay-400">
+            <figure class="sensor-card">
+                <img src="img/sensordegolpes.jpeg" alt="Sensor de Golpes SW420 - Prototipo Life Bracelet" loading="lazy">
+                <figcaption>Sensor de Golpes SW420 en el prototipo inicial de Life Bracelet</figcaption>
+            </figure>
+        </div>
+
+
+        <!-- 🎥 Video del Corte 1 -->
+        <div class="video-container-dynamic fade-in delay-400" onclick="playVideo(this)">
+            <div class="video-placeholder">
+                <span class="material-icons">play_circle_filled</span>
+                <h4>Ver Video Explicativo del Prototipo</h4>
+                <p>(Haz clic para cargar y reproducir)</p>
+            </div>
+            <iframe 
+                width="100%" 
+                height="315" 
+                data-src="https://www.youtube.com/embed/I9J4b7vBxuQ" 
+                title="Life Bracelet - Prototipo de Detección de Impacto (Corte 1)" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                style="display:none;">
+            </iframe>
+        </div>
+        <!-- 🎥 Fin del video -->
+    </div>
+</section>
+
+            
+            <hr class="separator">
+
+            <section id="corte2" class="corte-section">
+                <h2 class="section-title slide-up">⚙️ Corte 2: Integración de Detección Inercial y Alerta Web</h2>
+                <div class="corte-content slide-right">
+                    <p class="corte-intro">Esta fase marcó la **transición a una arquitectura robusta** y la validación del núcleo tecnológico: detección de caídas mediante un sensor inercial y señalización de alerta en tiempo real a través de Wi-Fi.</p>
+                    
+                    <h3>🎯 Componentes y Prototipo</h3>
+                    <ul class="list-bullet-style">
+                        <li><strong>Sensor de Caídas:</strong> **MPU-6050** (Unidad de Medición Inercial - IMU). En esta fase solo se usó el **acelerómetro**.</li>
+                        <li><strong>Procesamiento:</strong> **Arduino UNO** (prototipado inicial) y **ESP32** (procesamiento final, comunicación **Wi-Fi** y servidor de alerta).</li>
+                        <li><strong>Prototipo Físico:</strong> Maqueta funcional con formato de **Guante** para validar la integración circuital en un dispositivo corporal.</li>
+                    </ul>
+
+                    <div class="prototipo-gallery">
+                        <figure class="gallery-item slide-up delay-400">
+                            <img src="img/protoboard-guante.jpg" alt="Montaje del MPU-6050 y ESP32 en el guante prototipo" loading="lazy">
+                            <figcaption>Arquitectura central en Guante (Primera etapa de miniaturización)</figcaption>
+                        </figure>
+                        <figure class="gallery-item slide-up delay-600">
+                            <img src="img/alerta-web-esp32.jpg" loading="lazy" alt="Página web de alerta en el ESP32">
+                            <figcaption>Página de Alerta Web (IP Fija) mostrando la detección de caída</figcaption>
+                        </figure>
+                    </div>
+
+                    <h3>💡 Algoritmo de Detección Simplificado</h3>
+                    <p>El algoritmo se basa en el monitoreo de la **magnitud vectorial de la aceleración total** ($A_{Total}$):</p>
+                    
+                    <div class="formula-block fade-in delay-200">
+                        $$
+                        A_{Total} = \sqrt{A_x^2 + A_y^2 + A_z^2}
+                        $$
+                    </div>
+                    
+                    <ul class="list-bullet-style">
+                        <li><strong>Condición de Alerta:</strong> Se activa si $A_{Total}$ cae por debajo de **$0.5g$** (simulando **Caída Libre**) o si el cambio de aceleración excede **$\Delta A > 0.7g$** (simulando **Impacto**).</li>
+                    </ul>
+
+                </div>
+            </section>
+            
+            <hr class="separator">
+
+            <section id="corte3" class="corte-section">
+                <h2 class="section-title slide-up">📝 Corte 3: Proyección y Planificación</h2>
+                <div class="corte-content slide-left">
+                    <p class="corte-intro">El cierre del tercer semestre se dedicó a documentar las conclusiones del avance tecnológico y a establecer el plan de trabajo detallado para las próximas fases, centrándose en la miniaturización y la ampliación de capacidades.</p>
+                    
+                    <h3>📏 Plan de Miniaturización Progresiva</h3>
+                    <ul class="list-bullet-style">
+                        <li><strong>Presente:</strong> **Guante** (Validación circuital/funcional de MPU-6050 y ESP32).</li>
+                        <li><strong>Próxima Fase:</strong> **Media Mano** (Reducción de tamaño del circuito y migración total de componentes a una placa compacta).</li>
+                        <li><strong>Etapa Final:</strong> **Brazalete** (Diseño final compacto con batería, GPS/GPRS y sensores biométricos).</li>
+                    </ul>
+
+                    <h3>🌐 Próximas Fases Clave</h3>
+                    <div class="info-box info-box-future fade-in delay-400">
+    <span class="material-icons">trending_up</span>
+    <div>
+        <strong>Funcionalidades por Integrar:</strong>
+        <ul class="list-bullet-style inner-list">
+            <li><strong>Mejora de Detección:</strong> Uso del **giróscopo del MPU-6050** y lógica secuencial para **reducir falsos positivos**.</li>
+            <li>**Geolocalización:** Integración del módulo **GPS/GPRS** (ej. módulo GPS GPSMB2) para enviar alerta remota **vía SMS con coordenadas geográficas**.</li>
+            <li>**Monitoreo Biomédico:** Integración del sensor **MAX30102** para medir **frecuencia cardíaca** y **saturación de oxígeno ($\text{SpO}_2$)**.</li>
+        </ul>
+    </div>
+</div>
+
+<a href="img/LifeBracelet3erSem.pdf" target="_blank" class="btn fade-in delay-400">
+    <span class="material-icons">picture_as_pdf</span> Descargar Documento Completo (PDF)
+</a>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer-cta fade-in">
+        <div class="container">
+            <p>¿Interesado en la arquitectura completa de Life Bracelet?</p>
+            <a href="index.html#tecnologia" class="btn btn-footer">
+                <span class="material-icons">arrow_back</span> Volver a la Tecnología
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Renderización de KaTeX (si está presente)
+            if (window.renderMathInElement) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false},
+                    ],
+                    ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"]
+                });
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in, .delay-200, .delay-400, .delay-600').forEach(el => {
+                if (!el.classList.contains('visible')) observer.observe(el);
+            });
+
+            // Efecto Blur-on-Scroll (como en semestre1) para mantener coherencia visual
+            const header = document.querySelector('.blur-header');
+            const headerContent = document.querySelector('.header-semestre-content .header-content');
+            
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const maxBlur = 10; // Máximo desenfoque en píxeles
+                const blurAmount = Math.min(scrollPosition / 100, maxBlur); // Ajusta la velocidad de desenfoque
+                
+                if (header) {
+                    header.style.backgroundFilter = `blur(${blurAmount}px)`;
+                    header.style.backdropFilter = `blur(${blurAmount}px)`;
+                }
+                
+                // Efecto de desvanecimiento del contenido al hacer scroll
+                if (headerContent) {
+                    const opacity = Math.max(0, 1 - scrollPosition / 400); 
+                    headerContent.style.opacity = opacity;
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        function playVideo(container) {
+    const iframe = container.querySelector('iframe');
+    const placeholder = container.querySelector('.video-placeholder');
+    
+    iframe.src = iframe.getAttribute('data-src') + "?autoplay=1";
+    iframe.style.display = 'block';
+    if (placeholder) placeholder.style.display = 'none';
+}
+
+    </script>
+<script>
+        document.querySelectorAll('.semestre-card').forEach(card => {
+            card.addEventListener('click', () => card.classList.toggle('active'));
+        });
+    </script>
+</body>
+</html>
